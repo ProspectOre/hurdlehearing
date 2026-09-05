@@ -116,6 +116,7 @@ __TOKENS__
   .plain-list.icons li .ic { grid-row: 1 / span 2; }
   .plain-list.icons li strong, .plain-list.icons li span:not(.ic), .plain-list.icons li a { grid-column: 2; }
   .surface-deep .plain-list strong { color: var(--paper); }
+  .surface-deep .plain-list span:not(.ic) { color: color-mix(in srgb, var(--paper) 92%, var(--sea-deep)); }
   .surface-deep .ic { background: color-mix(in srgb, var(--paper) 14%, transparent); color: var(--paper); }
   .defn-pair { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 0; }
   .defn-pair > div { padding: 22px 24px; border-radius: 16px; border: 1px solid var(--linen); background: var(--paper); }
