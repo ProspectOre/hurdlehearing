@@ -1,0 +1,8 @@
+node_modules/
+dist/
+design/*results.json
+design/*simulated.json
+design/*tokens.hex.json
+design/*tokens.css
+design/*contrast-report.md
+.DS_Store

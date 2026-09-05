@@ -1,0 +1,89 @@
+{
+  "practice": {
+    "name": "Hurdle Hearing & Audiology",
+    "shortName": "Hurdle Hearing",
+    "doctor": "Dr. Christopher Hurdle, Au.D.",
+    "email": "HurdleHearing@me.com",
+    "credentialLine": "Doctor of Audiology · California-licensed audiologist · VA Community Care provider · Se habla español",
+    "licence": "California audiology licence AU1618",
+    "licenceOwnerConfirm": true
+  },
+  "offices": [
+    {
+      "id": "sm",
+      "name": "Santa Maria",
+      "address1": "210 S. Palisade Drive, Suite 204",
+      "address2": "Santa Maria, CA 93454",
+      "phone": "(805) 614-4800",
+      "tel": "+18056144800",
+      "fax": "(805) 614-4324",
+      "hoursShort": "Mon–Thu 9–12, 1:30–5 · Fri 9–1",
+      "hours": {
+        "1": [["09:00", "12:00"], ["13:30", "17:00"]],
+        "2": [["09:00", "12:00"], ["13:30", "17:00"]],
+        "3": [["09:00", "12:00"], ["13:30", "17:00"]],
+        "4": [["09:00", "12:00"], ["13:30", "17:00"]],
+        "5": [["09:00", "13:00"]]
+      },
+      "hoursRows": [["Mon – Thu", "9 AM – 12 PM, 1:30 – 5 PM"], ["Friday", "9 AM – 1 PM"], ["Sat – Sun", "Closed"]],
+      "access": "Wheelchair accessible. Ground-level parking. Same block as the VA Outpatient Clinic.",
+      "page": "location-santa-maria.html"
+    },
+    {
+      "id": "ag",
+      "name": "Arroyo Grande",
+      "address1": "880 Oak Park Blvd, Suite 101",
+      "address2": "Arroyo Grande, CA 93420",
+      "phone": "(805) 474-6004",
+      "tel": "+18054746004",
+      "fax": "(805) 474-6003",
+      "hoursShort": "Mon, Tue, Thu 9–12, 1:30–5 · Fri 9–12",
+      "hours": {
+        "1": [["09:00", "12:00"], ["13:30", "17:00"]],
+        "2": [["09:00", "12:00"], ["13:30", "17:00"]],
+        "4": [["09:00", "12:00"], ["13:30", "17:00"]],
+        "5": [["09:00", "12:00"]]
+      },
+      "hoursRows": [["Mon, Tue, Thu", "9 AM – 12 PM, 1:30 – 5 PM"], ["Friday", "9 AM – 12 PM"], ["Wed, Sat, Sun", "Closed"]],
+      "access": "Wheelchair accessible. Oak Park Professional Plaza.",
+      "page": "location-arroyo-grande.html"
+    }
+  ],
+  "nav": [
+    ["first-visit.html", "First visit"],
+    ["services.html", "Services"],
+    ["veterans.html", "Veterans"],
+    ["locations.html", "Locations"],
+    ["insurance.html", "Insurance & cost"],
+    ["about.html", "About"]
+  ],
+  "intents": [
+    ["first-visit.html", "I think I need a hearing test."],
+    ["veterans.html", "I'm a veteran with a VA referral."],
+    ["services.html#repairs", "My hearing aid needs a repair or batteries."],
+    ["insurance.html", "I want to know what it will cost."],
+    ["locations.html", "I'm looking for hours and directions."]
+  ],
+  "firstVisit": [
+    "A conversation about where hearing is hard for you.",
+    "A look in your ears for wax or anything that needs a physician.",
+    "The hearing test: soft sounds, speech in quiet and noise, middle ear.",
+    "Results explained in plain language, with your options."
+  ],
+  "services": [
+    ["Hearing evaluations", "A full diagnostic test, read by a Doctor of Audiology."],
+    ["Hearing aids", "Fitted to your hearing and your life, then adjusted until right."],
+    ["Repairs, cleaning, batteries", "Walk in during office hours, any brand, wherever you bought it."],
+    ["Tinnitus", "Evaluation and management for ringing in the ears."],
+    ["Earwax removal", "Safe removal in the office when wax blocks hearing."],
+    ["Custom earmolds and protection", "Swim, music, work, and range protection made for your ears."],
+    ["Assistive listening devices", "For phones, television, and rooms where hearing aids are not enough."]
+  ],
+  "vaSteps": [
+    "Ask your VA primary care provider for an audiology referral to community care.",
+    "VA or TriWest schedules your visit, or you call us and email TriWest within 24 hours.",
+    "Bring your referral or authorization number and your VA ID."
+  ],
+  "insurers": ["Medicare", "TriCare", "CenCal Health", "Aetna", "Cigna", "UnitedHealthcare", "Blue Cross Blue Shield"],
+  "review": { "text": "The doctor is calm and takes his time.", "source": "A patient of ten years, Google review" }
+}

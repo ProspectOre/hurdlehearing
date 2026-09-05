@@ -1,0 +1,20 @@
+{
+  "name": "hurdlehearing-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hurdle Hearing & Audiology website: static, information-first, built from verified design tokens.",
+  "type": "module",
+  "scripts": {
+    "tokens": "node scripts/verify-tokens.mjs",
+    "build": "node scripts/build.mjs",
+    "build:public": "NOINDEX=0 node scripts/build.mjs",
+    "gate": "node scripts/gate.mjs",
+    "check": "npm run tokens && npm run build && npm run gate",
+    "serve": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.50.0"
+  },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,52 @@
+<!-- title: Locations · Hurdle Hearing & Audiology -->
+<div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>›</span><span>Locations</span></nav>
+  <div class="page-title">
+    <h1>Two offices on the Central Coast</h1>
+    <p class="lede">Same doctor, same care. Choose the office closer to you.</p>
+  </div>
+</div>
+
+<section class="sec first" id="offices" data-budget="140">
+  <div class="wrap">
+    <div class="sec-head"><h2>Offices</h2></div>
+    <div class="offices">__OFFICE_BLOCKS__</div>
+  </div>
+</section>
+
+<section class="sec" id="areas" data-budget="80">
+  <div class="wrap two">
+    <div class="sec-head" style="margin: 0;"><h2>Which office is closer?</h2></div>
+    <div style="display: grid; gap: 16px;">
+      <ul class="plain-list">
+        <li><strong>Santa Maria office</strong><span>Santa Maria, Orcutt, Guadalupe, Lompoc, Los Alamos.</span></li>
+        <li><strong>Arroyo Grande office</strong><span>Arroyo Grande, Grover Beach, Pismo Beach, Oceano, Nipomo, San Luis Obispo.</span></li>
+      </ul>
+      <p class="muted small">Nipomo is about the same distance from both. <span class="muted">(owner-confirm areas)</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="repairs" data-budget="60">
+  <div class="wrap two">
+    <div class="sec-head" style="margin: 0;"><h2>Repairs and batteries</h2></div>
+    <p>Walk in during office hours at either office for repairs, cleaning, and batteries. Any brand, wherever you bought it.</p>
+  </div>
+</section>
+
+<section class="sec" id="contact" data-budget="70">
+  <div class="wrap two">
+    <div class="sec-head" style="margin: 0;">
+      <h2>Request a call</h2>
+      <p class="muted">We call back during office hours. Please do not include medical details.</p>
+      <p class="muted num" data-nocount>Prefer to call? Santa Maria <a class="tel" href="tel:__SM_TEL__">__SM_PHONE__</a> · Arroyo Grande <a class="tel" href="tel:__AG_TEL__">__AG_PHONE__</a></p>
+    </div>
+    <form class="form" id="call-form" novalidate>
+      <div class="field" data-required><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name"><span class="err">Please enter your name.</span></div>
+      <div class="field" data-required><label for="f-phone">Phone number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"><span class="help">We will only use it to call you back.</span><span class="err">Please enter a phone number with 10 digits.</span></div>
+      <div class="field"><label for="f-time">Best time to call</label><select id="f-time" name="time"><option>Mornings</option><option>Afternoons</option><option>Any time during office hours</option></select></div>
+      <div><button class="btn btn-solid" type="submit">Request a call</button></div>
+      <p class="form-msg" id="form-msg" tabindex="-1" data-show="false"></p>
+    </form>
+  </div>
+</section>

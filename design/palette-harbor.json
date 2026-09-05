@@ -1,0 +1,368 @@
+{
+  "meta": {
+    "name": "Hurdle Hearing palette: Harbor",
+    "space": "oklch",
+    "version": "0.1.0",
+    "date": "2026-09-04",
+    "note": "cool clinical trust: navy and teal-blue on a neutral white"
+  },
+  "colors": {
+    "paper": {
+      "L": 0.985,
+      "C": 0.004,
+      "h": 240,
+      "role": "page ground"
+    },
+    "paper-2": {
+      "L": 0.955,
+      "C": 0.008,
+      "h": 230,
+      "role": "alternate section ground"
+    },
+    "linen": {
+      "L": 0.9,
+      "C": 0.012,
+      "h": 230,
+      "role": "hairlines, table rules, disabled"
+    },
+    "ink": {
+      "L": 0.22,
+      "C": 0.03,
+      "h": 250,
+      "role": "body text, primary buttons, one dark band per page"
+    },
+    "ink-2": {
+      "L": 0.29,
+      "C": 0.028,
+      "h": 250,
+      "role": "secondary text"
+    },
+    "ink-3": {
+      "L": 0.45,
+      "C": 0.022,
+      "h": 250,
+      "role": "captions at 17px or larger only"
+    },
+    "sea-text": {
+      "L": 0.4,
+      "C": 0.075,
+      "h": 232,
+      "role": "calm clinical secondary as text and borders"
+    },
+    "sea": {
+      "L": 0.47,
+      "C": 0.09,
+      "h": 232,
+      "role": "large fills with paper text; icons on paper"
+    },
+    "sea-tint": {
+      "L": 0.945,
+      "C": 0.022,
+      "h": 225,
+      "role": "calm panels; links on the dark band"
+    },
+    "gold-text": {
+      "L": 0.45,
+      "C": 0.085,
+      "h": 70,
+      "role": "heritage accent as text and eyebrows"
+    },
+    "gold": {
+      "L": 0.74,
+      "C": 0.14,
+      "h": 75,
+      "role": "decorative accent only: rules, marks, timeline hairlines, logo; never a text ground or lone boundary"
+    },
+    "gold-bright": {
+      "L": 0.84,
+      "C": 0.15,
+      "h": 85,
+      "role": "primary button fill with ink text; headings on the dark band; never as text on light"
+    },
+    "link": {
+      "L": 0.42,
+      "C": 0.13,
+      "h": 255,
+      "role": "links only, always underlined"
+    },
+    "ok": {
+      "L": 0.45,
+      "C": 0.1,
+      "h": 150,
+      "role": "success text, with an icon and a word"
+    },
+    "warn": {
+      "L": 0.5,
+      "C": 0.11,
+      "h": 60,
+      "role": "warning text, with an icon and a word"
+    },
+    "err": {
+      "L": 0.45,
+      "C": 0.16,
+      "h": 25,
+      "role": "error text, with an icon and a word"
+    },
+    "sea-deep": {
+      "L": 0.34,
+      "C": 0.07,
+      "h": 235,
+      "role": "hover state of the primary button"
+    }
+  },
+  "targets": {
+    "body": {
+      "wcag": 7.0,
+      "apca": 90,
+      "note": "columns of text, 18px+ regular"
+    },
+    "text": {
+      "wcag": 4.5,
+      "apca": 75,
+      "note": "UI text, labels, eyebrows, captions 17px+"
+    },
+    "display": {
+      "wcag": 4.5,
+      "apca": 60,
+      "note": "headings 29px+ or bold 24px+"
+    },
+    "nontext": {
+      "wcag": 3.0,
+      "apca": 45,
+      "note": "focus rings, icons, meaningful borders"
+    },
+    "button": {
+      "wcag": 4.5,
+      "apca": 60,
+      "note": "button labels 20px bold"
+    }
+  },
+  "pairs": [
+    [
+      "ink",
+      "paper",
+      "body"
+    ],
+    [
+      "ink",
+      "paper-2",
+      "body"
+    ],
+    [
+      "ink",
+      "sea-tint",
+      "body"
+    ],
+    [
+      "ink-2",
+      "paper",
+      "body"
+    ],
+    [
+      "ink-2",
+      "paper-2",
+      "body"
+    ],
+    [
+      "ink-3",
+      "paper",
+      "text"
+    ],
+    [
+      "ink-3",
+      "paper-2",
+      "text"
+    ],
+    [
+      "ink",
+      "linen",
+      "text"
+    ],
+    [
+      "gold-text",
+      "paper",
+      "text"
+    ],
+    [
+      "gold-text",
+      "paper-2",
+      "text"
+    ],
+    [
+      "sea-text",
+      "paper",
+      "text"
+    ],
+    [
+      "sea-text",
+      "paper-2",
+      "text"
+    ],
+    [
+      "sea-text",
+      "sea-tint",
+      "text"
+    ],
+    [
+      "link",
+      "paper",
+      "text"
+    ],
+    [
+      "link",
+      "paper-2",
+      "text"
+    ],
+    [
+      "link",
+      "sea-tint",
+      "text"
+    ],
+    [
+      "ok",
+      "paper",
+      "text"
+    ],
+    [
+      "warn",
+      "paper",
+      "text"
+    ],
+    [
+      "err",
+      "paper",
+      "text"
+    ],
+    [
+      "ink",
+      "gold-bright",
+      "button"
+    ],
+    [
+      "paper",
+      "sea",
+      "button"
+    ],
+    [
+      "paper",
+      "sea-text",
+      "button"
+    ],
+    [
+      "paper",
+      "ink",
+      "button"
+    ],
+    [
+      "paper",
+      "link",
+      "button"
+    ],
+    [
+      "paper",
+      "ink",
+      "body"
+    ],
+    [
+      "gold-bright",
+      "ink",
+      "display"
+    ],
+    [
+      "sea-tint",
+      "ink",
+      "text"
+    ],
+    [
+      "linen",
+      "ink",
+      "text"
+    ],
+    [
+      "sea",
+      "paper",
+      "nontext"
+    ],
+    [
+      "sea-text",
+      "paper",
+      "nontext"
+    ],
+    [
+      "ink",
+      "paper",
+      "nontext"
+    ],
+    [
+      "paper",
+      "ink",
+      "nontext"
+    ],
+    [
+      "link",
+      "paper",
+      "nontext"
+    ],
+    [
+      "gold-text",
+      "paper",
+      "nontext"
+    ],
+    [
+      "paper",
+      "sea-deep",
+      "body"
+    ],
+    [
+      "paper",
+      "sea-deep",
+      "button"
+    ]
+  ],
+  "banned": [
+    [
+      "gold",
+      "paper",
+      "gold is never text on light ground (about 2.3:1)"
+    ],
+    [
+      "gold-bright",
+      "paper",
+      "gold-bright is never text on light ground"
+    ],
+    [
+      "ink",
+      "gold",
+      "gold is not a text ground: ink on gold reads Lc 54, below the bold-button floor of 60"
+    ],
+    [
+      "sea",
+      "ink",
+      "sea fails as text on the dark band; use sea-tint"
+    ],
+    [
+      "gold",
+      "paper",
+      "gold is not a lone boundary or icon on paper (under 3:1); pair with an ink or gold-text hairline"
+    ]
+  ],
+  "separability": {
+    "note": "brand fills must stay distinct under every simulation; text tokens carry meaning by words and underlines, never hue",
+    "pairs": [
+      [
+        "gold",
+        "sea"
+      ],
+      [
+        "gold-bright",
+        "sea-tint"
+      ],
+      [
+        "gold-bright",
+        "sea"
+      ]
+    ],
+    "minDeltaE": 0.12,
+    "minDeltaL": 0.1
+  }
+}
