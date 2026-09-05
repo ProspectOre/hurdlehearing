@@ -33,7 +33,10 @@ for (const f of pages) {
     const page = await ctx.newPage();
     await page.goto(base + f, { waitUntil: 'networkidle' });
     const sw = await page.evaluate(() => document.scrollingElement.scrollWidth);
-    if (sw > w) fail(`${f} ${name}: horizontal scroll (${sw} > ${w})`);
+    if (sw > w) {
+      const culprits = await page.evaluate((vw) => [...document.querySelectorAll('body *')].map((el) => { const r = el.getBoundingClientRect(); return { right: Math.round(r.right), w: Math.round(r.width), tag: el.tagName.toLowerCase(), cls: el.className && el.className.baseVal === undefined ? String(el.className).slice(0, 40) : '', text: (el.textContent || '').trim().slice(0, 40) }; }).filter((x) => x.right > vw).sort((a, b) => b.right - a.right).slice(0, 6), w);
+      fail(`${f} ${name}: horizontal scroll (${sw} > ${w}) ${JSON.stringify(culprits)}`);
+    }
     const res = await new AxeBuilder({ page }).analyze();
     if (res.violations.length) fail(`${f} ${name}: axe ${res.violations.map((v) => `${v.id}(${v.nodes.length})`).join(' ')}`);
     if (name === 'phone' && f === 'index.html') {
