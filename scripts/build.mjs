@@ -11,7 +11,9 @@ const D = JSON.parse(readFileSync(src('data.json'), 'utf8'));
 const hexPath = join(root, 'design', 'tokens.hex.json');
 if (!existsSync(hexPath)) { console.error('design/tokens.hex.json missing: run `npm run tokens` first'); process.exit(1); }
 const TOK = JSON.parse(readFileSync(hexPath, 'utf8'));
-const shell = readFileSync(src('shell.html'), 'utf8');
+const shell = readFileSync(src('shell.html'), 'utf8').replace('__CSS__', readFileSync(src('shell.css'), 'utf8'));
+const M = existsSync(src('svg/motifs.json')) ? JSON.parse(readFileSync(src('svg/motifs.json'), 'utf8')) : { icons: {} };
+const SERVICE_ICONS = ['ear', 'signal', 'wrench', 'ring', 'drop', 'shield', 'signal'];
 const hoursJs = readFileSync(src('hours.js'), 'utf8');
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 const NEEDED = ['paper', 'paper-2', 'linen', 'ink', 'ink-2', 'ink-3', 'sea', 'sea-text', 'sea-tint', 'sea-deep', 'gold-text', 'gold', 'gold-bright', 'link', 'ok', 'warn', 'err'];
@@ -56,9 +58,9 @@ const common = {
   __HERO_OFFICES__: D.offices.map(heroOffice).join('\n        '),
   __OFFICE_BLOCKS__: D.offices.map(officeBlock).join(''),
   __FOOT_OFFICES__: D.offices.map(footOffice).join(''),
-  __INTENTS__: D.intents.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join(''),
+  __INTENTS__: D.intents.map(([h, t], i) => `<li><a href="${h}"><span class="ic" data-icon="${['ear', 'id-card', 'wrench', 'dollar', 'pin'][i]}"></span>${t}</a></li>`).join(''),
   __FIRST_VISIT__: D.firstVisit.map((t) => `<li><span>${t}</span></li>`).join(''),
-  __SERVICES__: D.services.slice(0, 6).map(([n, t]) => `<li><strong>${n}</strong><span>${t}</span></li>`).join(''),
+  __SERVICES__: D.services.slice(0, 6).map(([n, t], i) => `<li><span class="ic" data-icon="${SERVICE_ICONS[i]}"></span><strong>${n}</strong><span>${t}</span></li>`).join(''),
   __VA_STEPS__: D.vaSteps.map((t) => `<li><span>${t}</span></li>`).join(''),
   __INSURERS__: D.insurers.slice(0, -1).join(', ') + ', and ' + D.insurers.slice(-1),
   __REVIEW__: D.review.text, __REVIEW_SOURCE__: D.review.source,
@@ -95,8 +97,12 @@ for (const f of pages) {
   ].filter(Boolean).join('\n');
   const inner = fill(shell, { ...common, __HEAD__: head, __NAV__: nav, __MOBILE_NAV__: mobileNav, __FOOT_NAV__: footNav, __PAGE__: fill(body, common) });
   const idx = inner.indexOf('<style>');
-  const finalHtml = '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+  let finalHtml = '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
     + inner.slice(0, idx).trim() + '\n</head>\n<body>\n' + inner.slice(idx).trim() + '\n</body>\n</html>\n';
+  // inject inline SVG for icons, motifs, and map placeholders
+  finalHtml = finalHtml.replace(/<span class="ic( big)?" data-icon="([a-z-]+)"><\/span>/g, (m, big, name) => { const svg = M.icons[name]; if (!svg) { console.error(`${f}: unknown icon ${name}`); failed = true; return m; } return `<span class="ic${big || ''}">${svg}</span>`; });
+  finalHtml = finalHtml.replace(/<span class="motif ([a-z-]+)" data-motif="([a-z-]+)"><\/span>/g, (m, cls, name) => { const svg = M[name]; if (!svg) { console.error(`${f}: unknown motif ${name}`); failed = true; return m; } return `<span class="motif ${cls}">${svg}</span>`; });
+  finalHtml = finalHtml.replace(/<div class="map-slot" data-map="(sm|ag)"><\/div>/g, (m, id) => { const svg = M['map-' + id]; if (!svg) { console.error(`${f}: unknown map ${id}`); failed = true; return m; } return `<div class="map-slot" aria-hidden="true">${svg}</div>`; });
   const left = finalHtml.match(/__[A-Z_]+__/g);
   if (left) { console.error(`${f}: unfilled placeholders ${[...new Set(left)].join(', ')}`); failed = true; }
   const styleOnly = (finalHtml.match(/<style>[\s\S]*?<\/style>/g) || []).join('\n').replace(tokensCss, '');
